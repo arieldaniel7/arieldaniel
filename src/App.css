@@ -178,12 +178,70 @@
 .Info .Container svg,img{
   width: 32px;
   height: 32px;
-  margin: 25px 10px 25px 0;
+  margin: 15px 10px 15px 0;
 }
 
 .Info .Container h1 {
   font-weight: 700;
   font-size: 60px;
+}
+
+.html-icon, .css-icon, .js-icon, .cpp-icon, .ps-icon, .pr-icon, .ae-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.rate {
+  border: #000000 1px solid;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+}
+
+.rate:nth-child(2){
+  animation-delay: 100ms;
+}
+.rate:nth-child(3){
+  animation-delay: 200ms;
+}
+.rate:nth-child(4) {
+  animation-delay: 300ms;
+}
+.rate:nth-child(5){
+  animation-delay: 400ms;
+}
+.rate:nth-child(6){
+  animation-delay: 500ms;
+}
+.rate:nth-child(7){
+  animation-delay: 600ms;
+}
+.rate:nth-child(8){
+  animation-delay: 700ms;
+}
+.rate:nth-child(9){
+  animation-delay: 800ms;
+}
+.rate:nth-child(10){
+  animation-delay: 900ms;
+}
+.rate:nth-child(11){
+  animation-delay: 1000ms;
+}
+
+.fill {
+  background-color: #000000;
+  opacity: 0;
+  /* animation: show 2s ease-in-out; */
+  animation-delay: 2s;
+}
+
+.show {
+  animation: show .5s ease-in-out;
+  opacity: 1;
 }
 
 footer {
@@ -195,6 +253,16 @@ footer {
   justify-content: space-between;
   margin: 10px 0 10px 0;
   border-top: 1px grey solid;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+    transform: translateX(-15%);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes upside-down {
@@ -218,15 +286,6 @@ footer {
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes circle-reveal {
   0%{
     opacity: 0;
@@ -238,7 +297,7 @@ footer {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 580px) {
   .Hero {
     margin: 0 3vw 0 3vw;
   }
@@ -254,9 +313,9 @@ footer {
     position: absolute;
     max-width: 70%;
     width: auto;
-    top: 48vh;
+    top: 43vh;
     left: 30vw;
-    margin: 0 3vw 0 0;
+    margin: 0 0 0 0;
   }
 
   .Hero .scroll {
@@ -288,6 +347,7 @@ footer {
 
   footer{
     flex-direction: column;
+    z-index: 1;
   }
 
   .Navbar nav {
@@ -297,5 +357,44 @@ footer {
   .dev {
     max-width: 100%;
     width: auto;
+  }
+
+  .html-icon, .css-icon, .js-icon, .cpp-icon, .ps-icon, .pr-icon, .ae-icon {
+    gap: 10px;
+  }
+
+  .rate {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .Hero .first {
+    top: 10vh;
+    max-width: 80%;
+    width: auto;
+  }
+
+  .Hero .second {
+    top: 55vh;
+  }
+
+  .rate{
+    height: 10px;
+    width: 10px;
+  }
+
+  footer{
+    z-index: 1;
+    margin-top: 15vh;
+  }
+
+}
+
+@media (max-height: 570px) {
+  footer{
+    z-index: 1;
+    margin-top: 35vh;
   }
 }
